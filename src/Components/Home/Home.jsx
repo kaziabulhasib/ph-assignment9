@@ -1,7 +1,11 @@
+import Banner from "../Banner/Banner";
+import Estate from "../Estate/Estate";
+
 const Home = () => {
   return (
     <div>
-      <h1 className='text-5xl text-center'>This is home.</h1>
+      <Banner></Banner>
+      <Estate></Estate>
     </div>
   );
 };

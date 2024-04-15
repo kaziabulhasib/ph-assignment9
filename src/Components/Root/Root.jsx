@@ -4,13 +4,12 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
   return (
-    <div>
-      <div className='max-w-7xl mx-auto py-8'>
-        <Nav></Nav>
-        <Outlet></Outlet>
+    <div className='min-h-screen relative'>
+      <div className='max-w-7xl mx-auto py-8 pb-14'>
+        <Nav />
+        <Outlet />
       </div>
-
-      <Footer></Footer>
+      <Footer className='absolute bottom-0 w-full mt-24' />
     </div>
   );
 };

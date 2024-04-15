@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className='footer p-10 bg-base-300 text-base-content flex-grow absolute bottom-0 w-full justify-around '>
+    <footer className='footer p-10 bg-base-300 text-base-content  absolute bottom-0 w-full justify-around '>
       {" "}
       {/* Add classes: absolute bottom-0 w-full */}
       <nav>
