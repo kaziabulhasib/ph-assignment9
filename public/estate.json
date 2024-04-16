@@ -9,7 +9,7 @@
       "area": "3,200 sq ft",
       "location": "Business Park Avenue",
       "facilities": ["Private offices", "Meeting rooms", "Fitness center"],
-      "image": "image_url_5.jpg"
+      "image": "/EstateImg/EstateImg1.jpg"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "area": "50,000 sq ft",
       "location": "Industrial Zone",
       "facilities": ["Heavy-duty machinery", "Assembly lines", "Quality control labs"],
-      "image": "image_url_6.jpg"
+      "image":"/EstateImg/EstateImg2.jpg"
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "area": "2,000 sq ft",
       "location": "Hipster Boulevard",
       "facilities": ["Storefront display", "Changing rooms", "Storage area"],
-      "image": "image_url_7.jpg"
+      "image": "/EstateImg/EstateImg3.jpg"
     },
     {
       "id": 4,
@@ -45,7 +45,7 @@
       "area": "30,000 sq ft",
       "location": "Industrial Hub",
       "facilities": ["Loading docks", "Office suites", "Storage racks"],
-      "image": "image_url_8.jpg"
+      "image": "/EstateImg/EstateImg4.jpg"
     },
     {
       "id": 5,
@@ -57,7 +57,7 @@
       "area": "4,500 sq ft",
       "location": "Dining District",
       "facilities": ["Dining area", "Bar lounge", "Outdoor terrace"],
-      "image": "image_url_9.jpg"
+      "image": "/EstateImg/EstateImg5.jpg"
     },
     {
       "id": 6,
@@ -69,7 +69,7 @@
       "area": "6,000 sq ft",
       "location": "Event Center Street",
       "facilities": ["Ballroom", "Stage area", "Audiovisual equipment"],
-      "image": "image_url_10.jpg"
+      "image": "/EstateImg/EstateImg6.jpg"
     }
   ]
   

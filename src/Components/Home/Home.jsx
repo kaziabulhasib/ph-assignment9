@@ -1,11 +1,12 @@
 import Banner from "../Banner/Banner";
-import Estate from "../Estate/Estate";
+
+import Estates from "../Estates/Estates";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Estate></Estate>
+      <Estates></Estates>
     </div>
   );
 };
