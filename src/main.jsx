@@ -9,6 +9,7 @@ import Home from "./Components/Home/Home.jsx";
 import Login from "./Components/Login/Login.jsx";
 import Register from "./Components/Register/Register.jsx";
 import About from "./Components/About/About.jsx";
+import EstateDetails from "./Components/EstateDetails/EstateDetails.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/estate/:id",
+        element: <EstateDetails></EstateDetails>,
+        loader: () => fetch("/estate.json"),
       },
     ],
   },
