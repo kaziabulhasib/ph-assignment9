@@ -1,14 +1,17 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const notify = () => toast("Logged in Successfully");
   const [loginError, setLoginError] = useState("");
   const { signinUser, signinWithGoogle } = useContext(AuthContext);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
+  // github auth provider
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,6 +35,7 @@ const Login = () => {
       });
   };
 
+  //  google Log in
   const handleGoogleLogin = () => {
     signinWithGoogle()
       .then((result) => {
@@ -42,8 +46,14 @@ const Login = () => {
       });
   };
 
+  // git hub login
+
   return (
     <div className='hero min-h-screen bg-base-200 my-24'>
+      <Helmet>
+        <title> Login -PrimeSquare Properties </title>
+      </Helmet>
+      ;
       <div className='hero-content flex-col '>
         <div className='text-center '>
           <h1 className='text-5xl font-bold'>Login now!</h1>

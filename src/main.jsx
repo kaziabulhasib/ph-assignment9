@@ -14,6 +14,7 @@ import AuthProvider from "./Components/Providers/AuthProvider.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import ExclusiveOffer from "./Components/ExclusiveOffer/ExclusiveOffer.jsx";
+import Profile from "./Components/Profile/Profile.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +49,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("/estate.json"),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -12,9 +12,3 @@
 .nav-link {
   margin-right: 24px;
 }
-
-.user-photo {
-  width: 40px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
-  border-radius: 50%; /* Make the photo round */
-}

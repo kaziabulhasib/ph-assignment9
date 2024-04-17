@@ -22,6 +22,11 @@ const Nav = () => {
         <NavLink activeClassName='active' className='nav-link' to='/offer'>
           Exclusive Offer
         </NavLink>
+        {user && (
+          <NavLink activeClassName='active' className='nav-link' to='/profile'>
+            Your Profile
+          </NavLink>
+        )}
       </div>
     </>
   );

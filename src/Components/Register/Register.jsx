@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 // react icon
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
   const notify = () => toast("User created Successfully");
   const [registerError, setRegisterError] = useState("");
@@ -64,6 +65,10 @@ const Register = () => {
 
   return (
     <div className='hero min-h-screen bg-base-200 my-24'>
+      <Helmet>
+        <title> Register -PrimeSquare Properties </title>
+      </Helmet>
+      ;
       <div className='hero-content flex-col '>
         <div className='text-center '>
           <h1 className='text-5xl font-bold'>Register Now!</h1>
