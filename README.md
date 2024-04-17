@@ -1,8 +1,15 @@
-# React + Vite
+# PrimeSquare Properties
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## website URL :https://assignment9-realestate.netlify.app/
 
-Currently, two official plugins are available:
+## Special Features :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Extensive Property Listings**: Vast database covering office spaces, retail units, industrial properties, etc.
+
+- **Advanced Search Filters**: Streamlined search with location, type, size, amenities, lease terms, and budget filters.
+
+- **Interactive Virtual Tours**: Explore properties through immersive virtual tours for a comprehensive view.
+
+- **Expert Guidance and Resources**: Access articles, guides, and market insights for informed decisions.
+
+- **Responsive Design and User-Friendly Interface**: Cross-device compatibility with intuitive navigation and clear interface.
