@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const notify = () => toast("Logged in Successfully");
   const { signinUser, signinWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -17,7 +20,8 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         e.target.reset();
-        navigate("/");
+        // navigate("/");
+        notify();
       })
       .catch((error) => {
         console.error(error);
@@ -25,7 +29,6 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    // Trigger Google login popup
     signinWithGoogle()
       .then((result) => {
         console.log(result);
@@ -53,6 +56,7 @@ const Login = () => {
                 placeholder='email'
                 className='input input-bordered'
                 required
+                defaultValue=''
               />
             </div>
             <div className='form-control'>
@@ -65,6 +69,7 @@ const Login = () => {
                 placeholder='password'
                 className='input input-bordered'
                 required
+                defaultValue=''
               />
               <label className='label'>
                 <p href='#' className='label-text-alt text-[12px] mt-6  '>
@@ -89,6 +94,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
