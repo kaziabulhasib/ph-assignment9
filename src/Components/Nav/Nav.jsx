@@ -19,7 +19,7 @@ const Nav = () => {
         <NavLink activeClassName='active' className='nav-link' to='/'>
           Home
         </NavLink>
-        <NavLink activeClassName='active' className='nav-link' to='/about'>
+        <NavLink activeClassName='active' className='nav-link' to='/offer'>
           Exclusive Offer
         </NavLink>
       </div>

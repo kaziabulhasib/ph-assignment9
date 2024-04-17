@@ -13,6 +13,7 @@ import EstateDetails from "./Components/EstateDetails/EstateDetails.jsx";
 import AuthProvider from "./Components/Providers/AuthProvider.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import ExclusiveOffer from "./Components/ExclusiveOffer/ExclusiveOffer.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/about",
-        element: <About></About>,
+        path: "/offer",
+        element: (
+          <PrivateRoute>
+            <ExclusiveOffer></ExclusiveOffer>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/estate/:id",

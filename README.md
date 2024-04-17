@@ -1,6 +1,6 @@
 # PrimeSquare Properties
 
-## website URL :https://assignment9-realestate.netlify.app/
+## Website URL :https://assignment9-realestate.netlify.app/
 
 ## Special Features :
 
