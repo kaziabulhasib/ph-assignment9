@@ -12,11 +12,13 @@ const Register = () => {
   // const navigate = useNavigate();
 
   const handleRegister = (e) => {
+    // const { name, image } = e;
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const PhotoUrl = e.target.PhotoUrl.value;
-    console.log(email, password, PhotoUrl);
+    const name = e.target.name.value;
+    const image = e.target.PhotoUrl.value;
+    console.log(email, password, name, image);
     e.target.reset();
 
     // password validation
@@ -40,6 +42,9 @@ const Register = () => {
     // create user
     createUser(email, password)
       .then((result) => {
+        // update user profil
+        updateUserProfile(name, image);
+
         console.log(result.user);
         setSuccess(true);
         // toast.success("User created successfully");
