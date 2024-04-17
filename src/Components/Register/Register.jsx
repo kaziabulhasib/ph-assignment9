@@ -8,18 +8,34 @@ const Register = () => {
   const notify = () => toast("User created Successfully");
   const [registerError, setRegisterError] = useState("");
   const [success, setSuccess] = useState(false);
-  const { createUser } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  // const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    const PhotoUrl = e.target.PhotoUrl.value;
+    console.log(email, password, PhotoUrl);
+    e.target.reset();
+
+    // password validation
+    if (!/[A-Z]/.test(password)) {
+      setRegisterError("Password must contain at least one uppercase letter");
+      return;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setRegisterError("Password must contain at least one lowercase letter");
+      return;
+    }
+    if (password.length < 6) {
+      setRegisterError("Password Should be 6 Character or More");
+      return;
+    }
 
     // reset error
     setRegisterError("");
-    // password validation
 
     // create user
     createUser(email, password)

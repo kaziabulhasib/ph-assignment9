@@ -3,7 +3,7 @@ import "./Nav.css";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 const Nav = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, photoUrl } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()
@@ -60,7 +60,8 @@ const Nav = () => {
       <div className='navbar-end'>
         {user ? (
           <>
-            <span>{user.email}</span>
+            <span>{user.PhotoUrl}</span>
+
             <Link onClick={handleLogOut} to='/register' className='btn'>
               Sign Out
             </Link>

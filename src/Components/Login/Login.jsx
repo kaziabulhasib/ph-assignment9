@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const notify = () => toast("Logged in Successfully");
+  const [loginError, setLoginError] = useState("");
   const { signinUser, signinWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -22,9 +23,12 @@ const Login = () => {
         e.target.reset();
         // navigate("/");
         notify();
+        setLoginError("");
       })
       .catch((error) => {
         console.error(error);
+        setLoginError("Email or Password didn't match");
+        e.target.reset();
       });
   };
 
@@ -86,6 +90,8 @@ const Login = () => {
               <button className='btn bg-[#f2f2f2]'>Login</button>
             </div>
           </form>
+          {loginError && <p className=' bg-red-500'>{loginError}</p>}
+          {/* social Login  */}
           <div className='p-4 flex gap-4'>
             <button onClick={handleGoogleLogin} className='btn btn-sm'>
               Google Login
