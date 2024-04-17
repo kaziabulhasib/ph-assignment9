@@ -1,6 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Nav.css";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 const Nav = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("User Logged out");
+      })
+      .catch((error) => console.error(error));
+  };
+
   const links = (
     <>
       <div className='gap-6'>
@@ -49,9 +61,18 @@ const Nav = () => {
         <ul className='menu menu-horizontal px-1 space-x-6'>{links}</ul>
       </div>
       <div className='navbar-end'>
-        <Link to='/login' className='btn'>
-          Login
-        </Link>
+        {user ? (
+          <>
+            <span>{user.email}</span>
+            <Link onClick={handleLogOut} to='/register' className='btn'>
+              Sign Out
+            </Link>
+          </>
+        ) : (
+          <Link to='/login' className='btn'>
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

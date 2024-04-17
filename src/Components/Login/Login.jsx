@@ -1,24 +1,40 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
-  const { signinUser } = useContext(AuthContext);
+  const { signinUser, signinWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
 
-    // singin user
+    // Sign in user
     signinUser(email, password)
       .then((result) => {
         console.log(result.user);
+        e.target.reset();
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
       });
   };
+
+  const handleGoogleLogin = () => {
+    // Trigger Google login popup
+    signinWithGoogle()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className='hero min-h-screen bg-base-200 my-24'>
       <div className='hero-content flex-col '>
@@ -65,6 +81,12 @@ const Login = () => {
               <button className='btn bg-[#f2f2f2]'>Login</button>
             </div>
           </form>
+          <div className='p-4 flex gap-4'>
+            <button onClick={handleGoogleLogin} className='btn btn-sm'>
+              Google Login
+            </button>
+            <button className='btn btn-sm'>Github Login</button>
+          </div>
         </div>
       </div>
     </div>

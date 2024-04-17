@@ -11,6 +11,8 @@ import Register from "./Components/Register/Register.jsx";
 import About from "./Components/About/About.jsx";
 import EstateDetails from "./Components/EstateDetails/EstateDetails.jsx";
 import AuthProvider from "./Components/Providers/AuthProvider.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import { HelmetProvider } from "react-helmet-async";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/estate/:id",
-        element: <EstateDetails></EstateDetails>,
+        element: (
+          <PrivateRoute>
+            <EstateDetails></EstateDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("/estate.json"),
       },
     ],
@@ -44,8 +50,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      {" "}
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        {" "}
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>
 );
