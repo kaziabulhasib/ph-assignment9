@@ -4,12 +4,15 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// react icon
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
   const notify = () => toast("User created Successfully");
   const [registerError, setRegisterError] = useState("");
   const [success, setSuccess] = useState(false);
   const { createUser, updateUserProfile } = useContext(AuthContext);
   // const navigate = useNavigate();
+  const [showPassword, SetShowPassword] = useState(false);
 
   const handleRegister = (e) => {
     // const { name, image } = e;
@@ -106,13 +109,21 @@ const Register = () => {
               <label className='label'>
                 <span className='label-text'>Password</span>
               </label>
-              <input
-                name='password'
-                type='password'
-                placeholder='password'
-                className='input input-bordered'
-                required
-              />
+              <div className='relative'>
+                <input
+                  name='password'
+                  type={showPassword ? "text" : "password"}
+                  placeholder='password'
+                  className='input input-bordered w-full'
+                  required
+                />
+
+                <span
+                  className='absolute top-4 right-3'
+                  onClick={() => SetShowPassword(!showPassword)}>
+                  {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                </span>
+              </div>
               <label className='label'>
                 <p href='#' className='label-text-alt text-[12px] mt-6  '>
                   Already User ?{" "}
