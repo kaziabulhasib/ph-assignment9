@@ -22,8 +22,8 @@ const ExclusiveOffer = () => {
         <title> Exclusive Offer -PrimeSquare Properties </title>
       </Helmet>
       <div className='max-w-7xl mx-auto sm:px-6 lg:px-8'>
-        <div className='bg-white overflow-hidden shadow-xl sm:rounded-lg p-8'>
-          <h2 className='text-3xl font-semibold text-gray-800'>
+        <div className='bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 mt-16 mb-8 '>
+          <h2 className='lg:text-3xl text-2xl font-semibold text-gray-800'>
             {exclusiveOffer.title}
           </h2>
           <p className='mt-4 text-lg text-gray-600'>
