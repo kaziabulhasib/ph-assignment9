@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Estate = ({ estate }) => {
   const { estate_title, image, location, id, segment_name } = estate;
   return (
-    <div className='card card-compact w-96 bg-base-100 shadow-xl'>
+    <div className='card card-compact lg:mx-auto mx-6 bg-base-100 shadow-xl'>
       <figure>
         <img src={image} alt='Shoes' />
       </figure>

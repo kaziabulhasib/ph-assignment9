@@ -59,7 +59,7 @@ const Login = () => {
   };
 
   return (
-    <div className='hero min-h-screen bg-base-200 my-24'>
+    <div className='hero min-h-screen bg-base-200 mt-16 mb-72 lg:mt-24 lg:mb-24 '>
       <Helmet>
         <title> Login -PrimeSquare Properties </title>
       </Helmet>

@@ -64,14 +64,14 @@ const Register = () => {
   };
 
   return (
-    <div className='hero min-h-screen bg-base-200 my-24'>
+    <div className='hero min-h-screen bg-base-200 mt-16 mb-96 lg:mt-24 lg:mb-24'>
       <Helmet>
         <title> Register -PrimeSquare Properties </title>
       </Helmet>
       ;
       <div className='hero-content flex-col '>
         <div className='text-center '>
-          <h1 className='text-5xl font-bold'>Register Now!</h1>
+          <h1 className=' text-3xl lg:text-5xl font-bold'>Register Now!</h1>
         </div>
         <div className='card shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
           <form onSubmit={handleRegister} className='card-body'>
