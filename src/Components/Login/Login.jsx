@@ -8,7 +8,8 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
   const notify = () => toast("Logged in Successfully");
   const [loginError, setLoginError] = useState("");
-  const { signinUser, signinWithGoogle } = useContext(AuthContext);
+  const { signinUser, signinWithGoogle, signinWithGithub } =
+    useContext(AuthContext);
   // const navigate = useNavigate();
 
   // github auth provider
@@ -47,6 +48,15 @@ const Login = () => {
   };
 
   // git hub login
+  const handleGithubLogin = () => {
+    signinWithGithub()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <div className='hero min-h-screen bg-base-200 my-24'>
@@ -106,7 +116,9 @@ const Login = () => {
             <button onClick={handleGoogleLogin} className='btn btn-sm'>
               Google Login
             </button>
-            <button className='btn btn-sm'>Github Login</button>
+            <button onClick={handleGithubLogin} className='btn btn-sm'>
+              Github Login
+            </button>
           </div>
         </div>
       </div>
