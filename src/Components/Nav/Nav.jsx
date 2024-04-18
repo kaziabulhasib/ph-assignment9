@@ -56,7 +56,7 @@ const Nav = () => {
           </ul>
         </div>
         <a className='btn btn-ghost text-2xl font-robo text-[#3b4d5d] font-bold'>
-          PrimeSquare Properties
+          PrimeSquare
         </a>
       </div>
       <div className='navbar-center hidden lg:flex'>

@@ -5,28 +5,8 @@ const Profile = () => {
   return (
     <div>
       <Helmet>
-        <title> Profile -PrimeSquare Properties </title>
+        <title> Profile -PrimeSquare </title>
       </Helmet>
-      {/* <div className='flex flex-col max-w-md p-6 bg-gray-50 text-gray-800'>
-        <img
-          src='https://images.unsplash.com/photo-1680276258815-cc900142a0b4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-          alt=''
-          className='flex-shrink-0 object-cover h-64 rounded-sm sm:h-96 bg-gray-500 aspect-square'
-        />
-        <div>
-          <h2 className='text-xl font-semibold'>Leroy Jenkins</h2>
-          <span className='block pb-2 text-sm text-gray-600'>
-            CTO of Company Inc.
-          </span>
-          <Link to='/'>
-            <button
-              type='button'
-              className='px-8 py-3 mt-8 font-semibold  rounded-lg border-gray-300 text-gray-800 border-2 '>
-              Update Profile
-            </button>
-          </Link>
-        </div>
-      </div> */}
 
       <div className='max-w-md mx-auto mt-32'>
         <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>

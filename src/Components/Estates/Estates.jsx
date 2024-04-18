@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Estate from "../Estate/Estate";
+import { Helmet } from "react-helmet-async";
 
 const Estates = () => {
   const [estates, setEstates] = useState([]);
@@ -10,8 +11,7 @@ const Estates = () => {
   }, []);
   return (
     <div className='lg:mb-40 mb-auto'>
-      <h1 className='text-center text-5xl font-robo'>Estates</h1>
-
+      ;<h1 className='text-center text-5xl font-robo'>Estates</h1>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 py-9'>
         {estates.map((estate) => (
           <Estate key={estate.id} estate={estate}></Estate>

@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
     <div>
+      <Helmet>
+        <title> Error -PrimeSquare </title>
+      </Helmet>
+      ;
       <div className='text-center my-40'>
         <h1 className='text-9xl font-bold font-robo text-red-500 mb-8'>
           Error
