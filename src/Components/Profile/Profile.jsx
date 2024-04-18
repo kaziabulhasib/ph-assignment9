@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Profile = () => {
+  const { user } = useContext(AuthContext);
+  // console.log(user.name);
   return (
     <div>
       <Helmet>
@@ -20,8 +23,7 @@ const Profile = () => {
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
               id='name'
               type='text'
-              placeholder='Enter your name'
-              value='John Doe'
+              value={user?.displayName || "Your name is not found"}
               readOnly
             />
           </div>
@@ -35,8 +37,7 @@ const Profile = () => {
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
               id='email'
               type='email'
-              placeholder='Enter your email'
-              value='john@example.com'
+              value={user?.email || "Your mail is  not found"}
             />
           </div>
           <div className='mb-4'>
@@ -49,24 +50,16 @@ const Profile = () => {
               <input
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 id='photoURL'
-                type='url'
-                placeholder='Enter photo URL'
-                value='https://example.com/photo.jpg'
-                readOnly
+                type='text'
+                value={user?.photoURL || "Photo Url not found"}
               />
-              <button
-                className='ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
-                type='button'
-                onClick={() => alert("Edit photo URL")}>
-                Edit
-              </button>
             </div>
           </div>
           <div className='flex items-center justify-between'>
             <button
-              className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              className='bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
               type='submit'>
-              Submit
+              Save
             </button>
           </div>
         </form>

@@ -66,7 +66,7 @@ const Register = () => {
   return (
     <div className='hero min-h-screen bg-base-200 mt-16 mb-96 lg:mt-24 lg:mb-24'>
       <Helmet>
-        <title> Register -PrimeSquare Properties </title>
+        <title> Register -PrimeSquare </title>
       </Helmet>
       ;
       <div className='hero-content flex-col '>
